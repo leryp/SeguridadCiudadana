@@ -1,0 +1,37 @@
+#sdk: "C:/MotorolaRhoMobileSuite2.2.1.13/ruby/lib/ruby/gems/1.9.1/gems/rhodes-3.5.1.13"
+sdkversion: "3.5.0"
+name: "SeguridadCiudadana"
+version: 1.0
+vendor: "rhomobile"
+build: "debug"
+bbver: 4.6
+applog: "rholog.txt"
+iphone:
+  configuration: "Release"
+  sdk: "iphonesimulator5.0"
+  provisionprofile: 
+  codesignidentity: 
+  entitlements: 
+  BundleIdentifier: "com.rhomobile.seguridadciudadana"
+  BundleURLScheme: "seguridadciudadana"
+  emulatortarget: "ipad"
+wp:
+  productid: "0024c260-d75c-0134-0cc3-12f652062c81"
+symbian:
+  uid: "0xe20a960a"
+android:
+  version: "4.0.3"
+extensions:
+  - json
+  - another-extension
+capabilities:
+  - gps
+  - pim
+  - camera
+  - vibrate
+  - phone
+  - bluetooth
+  - calendar
+  - non_motorola_device
+  - native_browser
+  - motorola_browser

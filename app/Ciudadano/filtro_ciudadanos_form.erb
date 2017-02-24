@@ -1,0 +1,22 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>Filtro de Ciudadanos x Sector</h1>
+    <a href="<%= Rho::RhoConfig.start_path %>" class="ui-btn-left" data-icon="home" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+      Home
+    </a>
+  </div>
+  
+  <div data-role="content">
+      <form method="POST" action="<%= url_for :controller => :Ciudadano, :action => :filter_ciudadanos_result %>">
+        <label for="sector_id" class="fieldLabel">Sector</label>
+          <select name="sector_id">
+            <% @sectores.each do |sector|%>
+              <option value="<%= sector.object%>" >
+                <%=sector.nombre %></option>
+            <%end%>
+          </select>
+        <input type="submit" class="standardButton" value="Buscar" />
+      </form>
+  </div>
+</div>  

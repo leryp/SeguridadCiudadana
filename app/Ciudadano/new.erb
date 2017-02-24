@@ -1,0 +1,57 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>New <%= @ciudadano.title %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @ciudadano.object %>"/>
+
+      
+          <div data-role="fieldcontain">
+            <label for="ciudadano[nombre]" class="fieldLabel">Nombre</label>
+            <input type="text" id="ciudadano[nombre]" name="ciudadano[nombre]" <%= placeholder("Nombre") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="ciudadano[apellido]" class="fieldLabel">Apellido</label>
+            <input type="text" id="ciudadano[apellido]" name="ciudadano[apellido]" <%= placeholder("Apellido") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="ciudadano[ci]" class="fieldLabel">Ci</label>
+            <input type="text" id="ciudadano[ci]" name="ciudadano[ci]" <%= placeholder("Ci") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="ciudadano[tlf]" class="fieldLabel">Tlf</label>
+            <textarea rows='3' cols='10' id="ciudadano[tlf]" name="ciudadano[tlf]" <%= placeholder("Tlf") %>> </textarea>
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="ciudadano[email]" class="fieldLabel">Email</label>
+            <input type="text" id="ciudadano[email]" name="ciudadano[email]" require  <%= placeholder("Email") %> />
+          </div>
+          
+          <div data-role="fieldcontain">
+            <label for="ciudadano[sector]" class="fieldLabel">Sector</label>
+            <select name="ciudadano[sector_id]">
+                  <option value='-1'>Seleccione</option>
+              <% @sectores.each do |sector| %>
+                  <option value='<%=sector.object%>'>
+                    <%=sector.nombre %>
+                  </option>
+              <%end%>
+            </select>
+           </div>
+
+
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>

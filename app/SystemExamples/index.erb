@@ -1,0 +1,32 @@
+<div data-role="page">
+  <div data-role="header" data-position="inline">
+    <h1>Ejemplos del Sistema</h1>
+    <a href="<%= Rho::RhoConfig.start_path %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+  </div>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      <li>platform : <%=System.get_property('platform') %> <br/></li>
+      <li>has_network : <%=System.get_property('has_network') %> <br/></li>
+      <li>locale : <%=System.get_property('locale') %> <br/></li>
+      <li>country: <%=System.get_property('country') %> <br/></li>
+      <li>screen_width : <%=System.get_property('screen_width') %> <br/></li>
+      <li>screen_height : <%=System.get_property('screen_height') %> <br/></li>
+      <li>screen_orientation : <%=System.get_property('screen_orientation') %> <br/></li>
+      <li>ppi_x : <%=System.get_property('ppi_x') %> <br/></li>
+      <li>ppi_y : <%=System.get_property('ppi_y') %> <br/></li>
+      <li>has_camera : <%=System.get_property('has_camera') %> <br/></li>
+      <li>phone_number : <%=System.get_property('phone_number') %> <br/></li>
+      <li>device_id : <%=System.get_property('device_id') %> <br/></li>
+      <li>full_browser : <%=System.get_property('full_browser') %> <br/></li>
+      <li>device_name : <%=System.get_property('device_name') %> <br/></li>
+      <li>os_version : <%=System.get_property('os_version') %> <br/></li>
+      <li>rhodes_port : <%=System.get_property('rhodes_port') %> <br/></li>
+      <li>is_emulator : <%=System.get_property('is_emulator') %> <br/></li>
+      <li>has_calendar : <%=System.get_property('has_calendar') %> <br/></li>
+      <li>has_touchscreen : <%=System.get_property('has_touchscreen') %> <br/></li>
+   </ul>   
+  </div>
+</div>

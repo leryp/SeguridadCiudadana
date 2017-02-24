@@ -1,0 +1,54 @@
+<div data-role="page" data-add-back-btn="false">
+
+  <div data-role="header" data-position="inline">
+    <h1><%= @ciudadano.nombre %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse">
+      Back
+    </a>
+    <a href="<%= url_for :action => :edit, :id => @ciudadano.object %>" class="ui-btn-right" data-icon="star">
+      Edit
+    </a>
+  </div>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      
+          <li>
+            <div class="itemLabel">Nombre</div>
+            <div class="itemValue"><%= @ciudadano.nombre %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Apellido</div>
+            <div class="itemValue"><%= @ciudadano.apellido %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Ci</div>
+            <div class="itemValue"><%= @ciudadano.ci %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Tlf</div>
+            <div class="itemValue"><%= @ciudadano.tlf %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Email</div>
+            <div class="itemValue"><%= @ciudadano.email %></div>
+          </li>
+          
+          <li>
+           <div class="itemLabel">Sector</div>
+           <div class="itemValue">
+             <% if @ciudadano.sector_id != '-1' %>
+                  <%= Sector.find(@ciudadano.sector_id).nombre  %>
+            <% end %>      
+           </div>
+         </li>
+      
+      
+    </ul>
+  </div>
+
+</div>

@@ -1,0 +1,28 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>Lista de Ciudadanos x Sector</h1>
+    <a href="<%= Rho::RhoConfig.start_path %>" class="ui-btn-left" data-icon="home" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+      Home
+    </a>
+    <a href="<%= url_for :action => :filtro_ciudadanos_form %>" class="ui-btn-right" data-icon="arrow-l">
+      Atr&aacute;s
+    </a>
+  </div>
+  
+  <div class="content">
+      <% if @ciudadanos.count < 1 %>
+        <h3>No existen ciudadanos en este sector.</h3>
+      <% else %>
+        <ul data-role="listview">
+          <% @ciudadanos.each do |ciudadano| %>
+            <li>
+              <a href="<%= url_for :action => :show, :id => ciudadano.object %>">
+                <span class="title"><%= ciudadano.nombre+' '+ciudadano.apellido %></span><span class="disclosure_indicator"></span>
+              </a>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+  </div>    
+</div>      

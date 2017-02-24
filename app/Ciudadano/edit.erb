@@ -1,0 +1,60 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>Edit <%= @ciudadano.nombre %></h1>
+    <a href="<%= url_for :action => :show, :id => @ciudadano.object %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+    <a href="<%= url_for :action => :delete, :id => @ciudadano.object %>" class="ui-btn-right" data-icon="delete" data-direction="reverse">
+      Delete
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+      <input type="hidden" name="id" value="<%= @ciudadano.object %>"/>
+      
+          <div data-role="fieldcontain">
+            <label for="ciudadano[nombre]" class="fieldLabel">Nombre</label>
+            <input type="text" id="ciudadano[nombre]" name="ciudadano[nombre]" value="<%= @ciudadano.nombre %>" <%= placeholder( "Nombre" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="ciudadano[apellido]" class="fieldLabel">Apellido</label>
+            <input type="text" id="ciudadano[apellido]" name="ciudadano[apellido]" value="<%= @ciudadano.apellido %>" <%= placeholder( "Apellido" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="ciudadano[ci]" class="fieldLabel">Ci</label>
+            <input type="text" id="ciudadano[ci]" name="ciudadano[ci]" value="<%= @ciudadano.ci %>" <%= placeholder( "Ci" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="ciudadano[tlf]" class="fieldLabel">Tlf</label>
+            <input type="text" id="ciudadano[tlf]" name="ciudadano[tlf]" value="<%= @ciudadano.tlf %>" <%= placeholder( "Tlf" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="ciudadano[email]" class="fieldLabel">Email</label>
+            <input type="text" id="ciudadano[email]" name="ciudadano[email]" value="<%= @ciudadano.email %>" <%= placeholder( "Email" ) %> />
+          </div>
+          
+          <div class="col-sm-4">
+            <div data-role="fieldcontain">
+               <label for="ciudadano[sector_id]" class="fieldLabel">Sector</label>
+               <select name="ciudadano[sector_id]">
+                     <option value='-1'>Seleccione</option>
+                 <% @sectores.each do |sector| %>
+                     <option value='<%=sector.object%>' <%= "selected" if sector.object == @ciudadano.sector_id%> >
+                       <%=sector.nombre %>
+                     </option>
+                 <%end%>
+               </select>
+              </div>
+           </div>
+      
+      <input type="submit" value="Update"/>
+    </form>
+  </div>
+
+</div>

@@ -1,0 +1,44 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :show, :id => @ciudadano.object %>
+    <h1>Edit <%= @ciudadano.nombre%></h1>
+    <%= link_to "Delete", :action => :delete, :id => @ciudadano.object %>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+      <input type="hidden" name="id" value="<%= @ciudadano.object %>"/>
+      <table>
+          
+          <tr>
+              <td class="itemLabel">Nombre: </td>
+              <td class="itemValue"><input type="text" name="ciudadano[nombre]" value="<%= @ciudadano.nombre %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Apellido: </td>
+              <td class="itemValue"><input type="text" name="ciudadano[apellido]" value="<%= @ciudadano.apellido %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Ci: </td>
+              <td class="itemValue"><input type="text" name="ciudadano[ci]" value="<%= @ciudadano.ci %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Tlf: </td>
+              <td class="itemValue"><input type="text" name="ciudadano[tlf]" value="<%= @ciudadano.tlf %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Email: </td>
+              <td class="itemValue"><input type="text" name="ciudadano[email]" value="<%= @ciudadano.email %>"/></td>
+          </tr>
+          
+      </table>
+      <input type="submit" value="Update"/>
+    </form>
+  </div>
+
+</div>
